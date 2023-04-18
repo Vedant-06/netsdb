@@ -1416,6 +1416,9 @@ common_env.Program('bin/classifier',
 common_env.Program('bin/dedupClassifier',
                         ['build/tests/TestSemanticClassificationWithDeduplication.cc', 'build/FF/SimpleFF.cc',
                         'build/FF/FFMatrixUtil.cc', 'build/word2vec/SemanticClassifier.cc'] + all + pdb_client)
+common_env.Program('bin/dedupImageClassifier',
+                        ['build/tests/TestImageClassificationWithDeduplication.cc', 'build/FF/SimpleFF.cc',
+                        'build/FF/FFMatrixUtil.cc', 'build/word2vec/SemanticClassifier.cc'] + all + pdb_client)
 common_env.Program('bin/semanticWithoutDedup',
                         ['build/tests/heterogeneousModelDeduplication/TextClassifierWithoutDeduplication.cc', 'build/FF/SimpleFF.cc',
                         'build/FF/FFMatrixUtil.cc', 'build/word2vec/SemanticClassifier.cc'] + all + pdb_client)
@@ -1961,6 +1964,7 @@ libFFTest = common_env.Alias('libclassifier', [
     'bin/pdb-cluster',
     'bin/pdb-server',
     'bin/classifier',
+    'bin/dedupImageClassifier',
     'bin/dedupClassifier',
     'bin/FCProjTest',
     # Other libraries from src/FF
